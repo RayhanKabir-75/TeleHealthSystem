@@ -99,7 +99,19 @@ public class AppointmentController {
         refresh();
     }
 
+    @FXML
+    private void book() {
+        String doctorDisplay = doctorCombo.getValue();
+        LocalDate d = datePicker.getValue();
+        LocalTime t = timeCombo.getValue();
 
+        String loc = (locationField.getText() == null || locationField.getText().isBlank())
+                ? "Online" : locationField.getText().trim();
+
+        if (doctorDisplay == null || d == null || t == null) {
+            info("Please choose doctor, date and time.");
+            return;
+        }
 
         LocalDateTime dt = LocalDateTime.of(d, t);
         if (dt.isBefore(LocalDateTime.now())) {
