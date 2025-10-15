@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.ths.controller.PrescriptionController"
+      spacing="10" style="-fx-background-color: yellow; -fx-padding: 20;">
+    <HBox spacing="10">
+        <TextField fx:id="medicineField" promptText="Medicine"/>
+        <TextField fx:id="qtyField" promptText="Qty"/>
+        <TextField fx:id="doctorField" promptText="Doctor (for patient request)"/>
+        <Button text="Request Refill" onAction="#addPrescription"/>
+        <Button text="Back" onAction="#back"/>
+    </HBox>
+    <HBox spacing="10">
+        <ComboBox fx:id="statusCombo" promptText="Set Status (doctor)"/>
+        <TextField fx:id="newQtyField" promptText="New Qty (doctor)"/>
+        <Button text="Update Selected (doctor)" onAction="#updateSelected"/>
+    </HBox>
+    <TableView fx:id="table" prefHeight="460">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+            <TableColumn fx:id="colPatient" text="Patient" prefWidth="150"/>
+            <TableColumn fx:id="colDoctor" text="Doctor" prefWidth="150"/>
+            <TableColumn fx:id="colMed" text="Medicine" prefWidth="180"/>
+            <TableColumn fx:id="colQty" text="Qty" prefWidth="80"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+            <TableColumn fx:id="colWhen" text="Created" prefWidth="180"/>
+        </columns>
+    </TableView>
+</VBox>

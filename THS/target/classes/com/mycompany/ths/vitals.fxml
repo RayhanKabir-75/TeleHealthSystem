@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.ths.controller.VitalsController"
+            style="-fx-background-color: #fff200;">  <!-- bright yellow page bg -->
+
+    <top>
+        <HBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Label text="Pulse:"/>
+                <TextField fx:id="pulseField" prefWidth="60"/>
+
+                <Label text="Temp (°C):"/>
+                <TextField fx:id="tempField" prefWidth="60"/>
+
+                <Label text="Resp:"/>
+                <TextField fx:id="respField" prefWidth="60"/>
+
+                <Label text="BP:"/>
+                <TextField fx:id="bpField" prefWidth="80"/>
+
+                <!-- black/yellow buttons -->
+                <Button text="Save" onAction="#saveVitals"
+                        style="-fx-background-color:#000000; -fx-text-fill:#fff200; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:8 14;"/>
+                <Button text="Show Trends" onAction="#showTrends"
+                        style="-fx-background-color:#000000; -fx-text-fill:#fff200; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:8 14;"/>
+                <Button text="Export PDF" onAction="#exportPdf"
+                        style="-fx-background-color:#000000; -fx-text-fill:#fff200; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:8 14;"/>
+                <Button text="Back" onAction="#backToDashboard"
+                        style="-fx-background-color:#000000; -fx-text-fill:#fff200; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:8 14;"/>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.45">
+            <items>
+                <VBox spacing="8">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <children>
+                        <Label text="Saved Records:"/>
+                        <TableView fx:id="table" prefHeight="320"
+                                   style="-fx-background-color:white; -fx-border-color:#000000; -fx-border-width:1;">
+                            <columns>
+                                <TableColumn fx:id="colDate"  text="Date/Time"      prefWidth="160"/>
+                                <TableColumn fx:id="colPulse" text="Pulse"          prefWidth="80"/>
+                                <TableColumn fx:id="colTemp"  text="Temp (°C)"      prefWidth="90"/>
+                                <TableColumn fx:id="colResp"  text="Resp"           prefWidth="90"/>
+                                <TableColumn fx:id="colBP"    text="Blood Pressure" prefWidth="120"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <!-- chart host; controller will inject the LineChart -->
+                <AnchorPane fx:id="chartHost" prefHeight="320" prefWidth="400"
+                            style="-fx-background-color:white; -fx-border-color:#000000; -fx-border-width:1;"/>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

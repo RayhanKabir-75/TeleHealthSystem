@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.ths.controller.NotesController"
+      spacing="12" style="-fx-background-color: yellow; -fx-padding: 20;">
+    <children>
+        <Text style="-fx-font-size:24; -fx-font-weight:bold;" text="Doctor Notes"/>
+        <GridPane hgap="10" vgap="10">
+            <children>
+                <Label text="Patient:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="patientField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Doctor:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="doctorField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Note:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextArea fx:id="noteArea" prefRowCount="3" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </children>
+        </GridPane>
+
+        <HBox spacing="10">
+            <Button text="Save"  onAction="#saveNotes"/>
+            <Button text="Back"  onAction="#back"/>
+        </HBox>
+
+        <Label text="Saved Notes:"/>
+        <TableView fx:id="table" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colDate"    text="Date/Time"  prefWidth="160"/>
+                <TableColumn fx:id="colPatient" text="Patient"    prefWidth="140"/>
+                <TableColumn fx:id="colDoctor"  text="Doctor"     prefWidth="140"/>
+                <TableColumn fx:id="colContent" text="Content"    prefWidth="320"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

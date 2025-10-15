@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane hgap="12" prefHeight="560" prefWidth="900" style="-fx-background-color: yellow; -fx-padding: 20;" vgap="12" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ths.controller.AppointmentController">
+    <children>
+        <Text style="-fx-font-size:24; -fx-font-weight:bold;" text="Appointments" GridPane.columnSpan="4" />
+
+        <Label text="Doctor:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="doctorCombo" prefWidth="240" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Date:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <DatePicker fx:id="datePicker" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+        <Label text="Time:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="timeCombo" prefWidth="140" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Location:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <TextField fx:id="locationField" promptText="Online / Clinic A" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+        <Button onAction="#book" style="-fx-background-color: black;" text="Book" textFill="#f6ff00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button onAction="#backToDashboard" style="-fx-background-color: black;" text="Back" textFill="#f6ff00" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+        <TableView fx:id="table" prefHeight="380" GridPane.columnSpan="4" GridPane.rowIndex="4">
+            <columns>
+                <TableColumn fx:id="colDate" prefWidth="240" text="Date/Time" />
+                <TableColumn fx:id="colDoctor" prefWidth="220" text="Doctor" />
+                <TableColumn fx:id="colLocation" prefWidth="220" text="Location" />
+                <TableColumn fx:id="colStatus" prefWidth="160" text="Status" />
+            </columns>
+        </TableView>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

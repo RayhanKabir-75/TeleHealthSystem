@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.ths.controller.DoctorAppointmentsController"
+      spacing="10" style="-fx-background-color: yellow; -fx-padding: 20;">
+    <HBox spacing="10">
+        <Button text="Back" onAction="#back"/>
+        <TextField fx:id="newTime" promptText="YYYY-MM-DDTHH:mm"/>
+        <ComboBox fx:id="statusCombo" promptText="Status"/>
+        <TextField fx:id="newLocation" promptText="Location"/>
+        <Button text="Update Selected" onAction="#updateSelected"/>
+    </HBox>
+    <TableView fx:id="table" prefHeight="450">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+            <TableColumn fx:id="colPatient" text="Patient" prefWidth="200"/>
+            <TableColumn fx:id="colDate" text="Date/Time" prefWidth="220"/>
+            <TableColumn fx:id="colLocation" text="Location" prefWidth="160"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
+        </columns>
+    </TableView>
+</VBox>

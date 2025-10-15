@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.ths.controller.ReferralController"
+      spacing="10" style="-fx-background-color: yellow; -fx-padding: 20;">
+    <HBox spacing="10">
+        <TextField fx:id="patientField" promptText="Patient (doctor only)"/>
+        <TextField fx:id="hospitalField" promptText="Hospital"/>
+        <TextField fx:id="procedureField" promptText="Procedure"/>
+        <TextField fx:id="whenField" promptText="YYYY-MM-DDTHH:mm"/>
+        <Button text="Create Referral (doctor)" onAction="#createReferral"/>
+        <Button text="Back" onAction="#back"/>
+    </HBox>
+    <HBox spacing="10">
+        <ComboBox fx:id="statusCombo" promptText="Status"/>
+        <Button text="Update Selected (doctor)" onAction="#updateSelected"/>
+    </HBox>
+    <TableView fx:id="table" prefHeight="460">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+            <TableColumn fx:id="colPatient" text="Patient" prefWidth="150"/>
+            <TableColumn fx:id="colDoctor" text="Doctor" prefWidth="150"/>
+            <TableColumn fx:id="colHospital" text="Hospital" prefWidth="160"/>
+            <TableColumn fx:id="colProcedure" text="Procedure" prefWidth="160"/>
+            <TableColumn fx:id="colWhen" text="When" prefWidth="180"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
+        </columns>
+    </TableView>
+</VBox>
