@@ -84,8 +84,8 @@ mvn -q javafx:run
 ```
 
 Login with demo accounts (if you loaded `seed.sql`):
-- Patient: `rayhan / p@ss`
-- Doctor : `dr.ahmed / d@ss`
+- Patient: `bob / bob123`
+- Doctor : `dr.lee / drlee123`
 
 ---
 
