@@ -12,8 +12,8 @@ public final class SchemaInit {
     private static final String DB_URL   = "jdbc:mysql://localhost:3306/" + DB_NAME + "?serverTimezone=UTC";
 
     // TODO: set to your local MySQL credentials
-    private static final String USER = "admin";
-    private static final String PASS = "admin";
+    private static final String USER = "ths";
+    private static final String PASS = "ths123";
 
     private SchemaInit() {}
 
